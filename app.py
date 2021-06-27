@@ -16,6 +16,7 @@ class Genre(db.Model):
     anime_genre = db.Column(db.String(200))
     suggestion = db.Column(db.String(200))
 
+
 class Anime(db.Model):
     animeid = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(200))
@@ -95,4 +96,4 @@ def delete(id):
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
-        app.run(debug=True, host='0.0.0.0')
+        app.run(debug=True, host='0.0.0.0') 
