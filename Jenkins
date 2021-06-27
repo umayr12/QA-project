@@ -1,0 +1,17 @@
+Pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'python3 app.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'pytest'
+            }
+        }
+
+    }
+}
