@@ -32,6 +32,7 @@ class Anime(db.Model):
         self.watched = watched
         self.genreid = genreid
 
+
 db.create_all()
 
 #homepage route

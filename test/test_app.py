@@ -37,17 +37,17 @@ def test_homepage():
     r = http.request('GET', 'http://35.242.148.36:5000/')
     assert 200 == r.status
 
-# def test_insert():
-#     http = urllib3.PoolManager()
-#     r = http.request('GET', 'http://35.242.148.36:5000/insert/')
-#     assert 200 == r.status
+def test_insert():
+    http = urllib3.PoolManager()
+    r = http.request('GET', 'http://35.242.148.36:5000/insert/')
+    assert 404 == r.status
 
-# def test_update():
-#     http = urllib3.PoolManager()
-#     r = http.request('GET', 'http://35.242.148.36:5000/update/')
-#     assert 200 == r.status
+def test_update():
+    http = urllib3.PoolManager()
+    r = http.request('POST', 'http://35.242.148.36:5000/update/')
+    assert 404 == r.status
 
-# def test_action_delete():
-#     http = urllib3.PoolManager()
-#     r = http.request('GET', 'http://35.242.148.36:5000/action/delete/')
-#     assert 200 == r.status
+def test_action_delete():
+    http = urllib3.PoolManager()
+    r = http.request('GET', 'http://35.242.148.36:5000/action/delete/')
+    assert 404 == r.status
