@@ -6,11 +6,11 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
-app.secret_key = "Secret Key"
+app.secret_key = "hgjhhjg"
 
 #connection to mysql
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:anime@35.234.138.37:3306/mydb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db=SQLAlchemy(app)
@@ -28,6 +28,12 @@ class Anime(db.Model):
     total = db.Column(db.Integer)
     watched = db.Column(db.Integer)
     genreid = db.Column(db.Integer, db.ForeignKey('genre.genreid'))
+    def __init__(self, name, dubbed, total, watched, genreid):
+        self.name = name
+        self.dubbed = dubbed
+        self.total = total
+        self.watched = watched
+        self.genreid = genreid
 
 db.create_all()
 
